@@ -1,6 +1,16 @@
 package DSA.Arrays;
 
 public class MajorityElement {
+    /**
+     * @implNote moore's voting algorithm
+     * @implNote initialize count as 1 and majority as arr[0]
+     * @implNote if the next element is majority element count ++ else count --
+     * @implNote if count becomes zero set the majority as current element which decreased previous
+     * @implNote max occuring element will be as res
+     * @implNote check if the freq of res is greater than n / 2 else no one wins
+     * @param arr
+     * @return
+     */
     public static int solution(int arr[]) {
         int res = 0;
         int count = 1;

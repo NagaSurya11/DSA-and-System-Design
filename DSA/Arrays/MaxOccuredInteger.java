@@ -6,7 +6,7 @@ import java.util.Map;
 public class MaxOccuredInteger {
     /**
      * @implNote Initialize a Hash array arr[] to store the occurrence of every element in all the ranges combined.
-     * @implNote Iterate over all the N ranges and increment L[i] by one and decrement R[i] by one.
+     * @implNote Iterate over all the N ranges and increment L[i] - 1 by one and decrement R[i] by one.
      * @implNote Run a Loop from 1 to the maximum end value of all the ranges and take the Prefix sum.
      * @param L
      * @param R
