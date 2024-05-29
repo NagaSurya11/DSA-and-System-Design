@@ -1,14 +1,54 @@
 package DSA.Tree;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Stack;
 
 public class BinaryTree {
     public enum TraverseType {
         INORDER,
         PREORDER,
         POSTORDER
+    }
+
+    /**
+     * @implNote iterarive
+     * @param node
+     */
+    private static void preOrderTraversal(Node node) {
+        Stack<Node> stack = new Stack<>();
+        Node current = node;
+        while (!stack.empty() || current != null) {
+            while (current != null) {
+                System.out.print(current.data);
+                if (current.right != null) {
+                    stack.push(current.right);
+                }
+                current = current.left;
+            }
+            current = stack.pop();
+        }
+        System.out.println();
+    }
+    /**
+     * @implNote iterarive
+     * @param node
+     */
+    private static void inOrderTraversal(Node node) {
+        Stack<Node> stack = new Stack<>();
+        Node current = node;
+        while (current != null || !stack.empty()) {
+            while (current != null) {
+                stack.push(current);
+                current = current.left;
+            }
+            current = stack.pop();
+            System.out.print(current.data + " ");
+            current = current.right;
+        }
+        System.out.println();
     }
     /**
      * @implNote Left -> Root -> Right
@@ -135,6 +175,7 @@ public class BinaryTree {
          *      4       5
          */
         // print(traverse(root, TraverseType.INORDER));
+        inOrderTraversal(root);
         // System.out.println(height(root));
         // printNodesAtKheight(root, 1);
 
@@ -162,7 +203,7 @@ public class BinaryTree {
         // System.out.println(printKDistantfromLeaf(node, 0));
 
         // System.out.println(size(node));
-        System.out.println(max(root));
+        // System.out.println(max(root));
 
     }
 }
