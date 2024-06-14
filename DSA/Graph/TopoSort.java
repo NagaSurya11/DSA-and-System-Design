@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Queue;
 
 public class TopoSort {
+    // needs to be printed once all the dependent is printed
         //Function to return list containing vertices in Topological order.
     static int[] topoSort(int V, ArrayList<ArrayList<Integer>> adj)
     {
